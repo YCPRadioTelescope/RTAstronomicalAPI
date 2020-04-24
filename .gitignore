@@ -1,0 +1,7 @@
+# things that dont need to be shown
+AstroAPIKey.cs
+aws-beanstalk-tools-defaults.json
+
+# builds
+/bin/
+/obj/
