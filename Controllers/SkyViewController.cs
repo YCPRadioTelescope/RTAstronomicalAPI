@@ -23,7 +23,7 @@ namespace RTAstronomicalAPI.Controllers
         {
             Console.WriteLine(year + ", " + month + ", " + day + ", " + hour);
             SkyView view = new SkyView();
-            if (key.Equals(AstroAPIKey.getKey()))
+            if (key != null && key.Equals(AstroAPIKey.getKey()))
             {
                 int WIDTH = 720;
                 int HEIGHT = 180;

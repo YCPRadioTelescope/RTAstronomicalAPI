@@ -30,7 +30,7 @@ namespace RTAstronomicalAPI.Controllers
         [HttpGet]
         public HorizonCheck Get(String key, int year, int month, int day, int hour, int minute, float targetRA, float targetDec)
         {
-            if(key.Equals(AstroAPIKey.getKey())) { 
+            if(key != null && key.Equals(AstroAPIKey.getKey())) { 
                 // altitude of the telescope is at 390 feet above sea level, find this in the configs
                 DrawSky.Easel easel = GenerateImage(year, month, day, hour, minute, -76.704564F, 40.024409F, 390, targetRA, targetDec);
                 HorizonCheck HC = new HorizonCheck();
