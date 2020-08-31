@@ -15,7 +15,7 @@ namespace RTAstronomicalAPI.Controllers
         {
             int WIDTH = 720;
             int HEIGHT = 180;
-            DrawSky.Easel easel = new DrawSky.Easel(new System.Drawing.Size(WIDTH, HEIGHT));
+            Easel easel = new Easel(new System.Drawing.Size(WIDTH, HEIGHT));
             easel.dt = new DateTime(year, month, day, hour, minute, 0);
             easel.longitude = longitude;
             easel.latitude = laditude;
@@ -32,7 +32,7 @@ namespace RTAstronomicalAPI.Controllers
         {
             if(key != null && key.Equals(AstroAPIKey.getKey())) { 
                 // altitude of the telescope is at 390 feet above sea level, find this in the configs
-                DrawSky.Easel easel = GenerateImage(year, month, day, hour, minute, -76.704564F, 40.024409F, 390, targetRA, targetDec);
+                Easel easel = GenerateImage(year, month, day, hour, minute, -76.704564F, 40.024409F, 390, targetRA, targetDec);
                 HorizonCheck HC = new HorizonCheck();
                 HC.azimuth = easel.azimuth;
                 HC.elevation = easel.elevation;
